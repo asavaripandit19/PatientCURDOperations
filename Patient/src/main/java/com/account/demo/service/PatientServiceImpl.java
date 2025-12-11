@@ -1,6 +1,6 @@
 package com.account.demo.service;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,7 +51,7 @@ public class PatientServiceImpl implements PatientService {
 	}
 
 	@Override
-	public Patient findByDate(Date date) {
+	public List<Patient> findByDate(Date date) {
 		// TODO Auto-generated method stub
 		return pr.findByDate(date);
 	}

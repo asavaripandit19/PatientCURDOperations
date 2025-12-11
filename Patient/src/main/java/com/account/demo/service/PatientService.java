@@ -1,6 +1,6 @@
 package com.account.demo.service;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.List;
 
 import com.account.demo.model.Patient;
@@ -19,7 +19,7 @@ public interface PatientService {
 
 	Patient seachById(Integer id) throws Exception;
 
-	Patient findByDate(Date date);
+	List<Patient> findByDate(Date date);
 
 	Patient findByName(String name);
 

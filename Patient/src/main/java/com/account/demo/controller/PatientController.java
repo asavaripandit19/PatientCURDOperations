@@ -1,9 +1,10 @@
 package com.account.demo.controller;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
@@ -56,8 +57,9 @@ public class PatientController {
 		return new ResponseEntity<Patient>(result, HttpStatus.OK);
 	}
 	
-	@GetMapping("date/{date}")
-	public Patient findByDate(@PathVariable Date date) {
+	@GetMapping("/date/{date}")
+	public List<Patient> findByDate(@PathVariable @DateTimeFormat(pattern = "dd-MM-yyyy") Date date) {
+		
 		return ps.findByDate(date);
 	}
 	
